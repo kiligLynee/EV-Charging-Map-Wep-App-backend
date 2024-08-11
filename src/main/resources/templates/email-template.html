@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title th:text="${'Thank you for registering with Charging'}">Thank you for registering with Charging</title>
+</head>
+<body>
+<h2 th:text="${username}">User,</h2>
+<p>Thank you for registering with Charging.</p>
+<p>Please click the link below to complete your account activation:</p>
+<p><a th:href="${activationLink}" style="color: #23b4da; text-decoration: none;">Activate your account</a></p>
+</body>
+</html>

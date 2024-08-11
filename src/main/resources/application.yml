@@ -1,0 +1,61 @@
+server:
+  port: 15000
+mybatis-plus:
+  mapper-locations: classpath*:mapper/**/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+
+
+# 日志等级
+logging:
+  level:
+    com:
+      charging:
+        mapper: debug
+# 数据库配置信息
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 123456
+    url: jdbc:mysql://localhost:3306/charging?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    type: com.alibaba.druid.pool.DruidDataSource
+    # 谷歌邮箱配置
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: ylyneee223@gmail.com
+    password: vkpy blip vefv gcrc
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+#  qq邮箱配置
+#  mail:
+#    host: smtp.qq.com
+#    username: 484477099@qq.com
+#    password: pobmdgpjolnccacd
+#    port: 465
+#    default-encoding: UTF-8
+#    properties:
+#      mail:
+#        #配置SSL 加密工厂
+#        smtp:
+#          ssl:
+#            enable: true
+#            required: false
+#          #开启debug模式，方便看日志排查错误
+#        debug: true
+
+
+# JWT配置信息
+jwt:
+  secret: charging  # JWT 密钥,请使用一个复杂的随机字符串
+  expiration: 86400  # Token 过期时间(秒),这里设置为24小时
+
+# 邮箱激活链接  放服务器上需要更换地址
+email:
+  activateUrl: http://localhost:15000/user/activate
