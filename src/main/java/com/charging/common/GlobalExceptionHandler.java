@@ -27,5 +27,5 @@ public class GlobalExceptionHandler {
         return new ApiResponse(HttpStatus.BAD_REQUEST.value(), "Validation failed", errors);
     }
 
-    // 您可以添加其他类型的异常处理方法
+
 }

@@ -58,7 +58,7 @@ public class UserService {
         String token = jwtUtil.generateToken(new User(userinfoEntity.getId(), "", new HashSet<>()));
         userinfoEntity.setToken(token);
         userinfoMapper.updateById(userinfoEntity);
-        return ApiResponse.success("login successful", token);
+        return ApiResponse.success("login successful", userinfoEntity);
     }
 
     @Transactional(rollbackFor = Exception.class)
